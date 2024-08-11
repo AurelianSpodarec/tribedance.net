@@ -7,7 +7,7 @@ function ProductCardItem({ item }: { item: IProduct }) {
   return (
     <Link href={`/shop/${item.slug}`}>
       <div className="text-gray-50">
-        <img src={`/images/products/${item.thumbnail}`} />
+        {/* <img src={`/images/products/${item.thumbnail}`} /> */}
         <div>
           <h3 className="text-xl font-bold">{item.title}</h3>
 

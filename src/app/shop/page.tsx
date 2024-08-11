@@ -19,23 +19,23 @@ function PageShop() {
       <Section>
         <Container>
           <div className="grid gap-8 grid-cols-4">
-            {dataReleases.map((item) => {
+            {/* {dataReleases.map((item) => {
               return <ProductCardItem item={item} />
-            })}
+            })} */}
           </div>
         </Container>
 
         <div>
           Data Labels
           <div>
-            {dataLabels.map((label) => {
+            {/* {dataLabels.map((label) => {
               return (
                 <div>
                   {label.name}
                   <img src={label.logo} />
                 </div>
               )
-            })}
+            })} */}
           </div>
         </div>
       </Section>

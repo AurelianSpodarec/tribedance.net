@@ -9,10 +9,10 @@ const dataMenu: IMenuItem[] = [
     name: "Shop",
     url: "/shop",
   },
-  // {
-  //   name: "Mixing and Mastering",
-  //   url: "/mixing-and-mastering",
-  // },
+  {
+    name: "Mixing and Mastering",
+    url: "/mixing-and-mastering",
+  },
   // {
   //   name: "Academy",
   //   url: "/academy",
