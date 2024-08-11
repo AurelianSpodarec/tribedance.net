@@ -15,3 +15,10 @@ export function parseCookies (cookiesString:any) {
 
   return cookies
 }
+
+export const formatPrice = (amount: number, currency: string, locale: string = "en-US") => {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  }).format(amount);
+};

@@ -1,18 +1,101 @@
+'use client'
+
 import Section from "@/components/_layout/Section"
 import Container from "@/components/_layout/Container"
 
-const item = {
-  title: "Freak Boiii / Golly Galore",
-  slug: "freak-boiii-golly-galore",
-  thumbnail: "freak-boiii.jpg",
-  price: {
-    amount: 2.28,
-    currency: "USD"
-  },
-  originalLink: "https://www.beatport.com/release/freak-boiii-golly-galore/2553913"
+// const item = {
+//   title: "Freak Boiii / Golly Galore",
+//   slug: "freak-boiii-golly-galore",
+//   thumbnail: "freak-boiii.jpg",
+//   price: {
+//     amount: 2.28,
+//     currency: "USD"
+//   },
+//   originalLink: "https://www.beatport.com/release/freak-boiii-golly-galore/2553913"
+// }
+
+import React from 'react';
+import { Color, Palette } from 'color-thief-react';
+import { getProductBySlug } from "@/data/dataProducts";
+import { useParams } from "next/navigation";
+import { Button } from "@/components/atoms/button";
+import { formatPrice } from "@/lib/utils";
+
+// const ImageWithGradient = ({ src }) => {
+//   return (
+//     <Color src={src} format="rgbString">
+//       {({ data, loading, error }) => {
+//         if (loading) {
+//           console.log('Loading color data...');
+//           return <div>Loading...</div>;
+//         }
+
+//         if (error) {
+//           console.error('Error loading color data:', error);
+//           return <div>Error loading color data</div>;
+//         }
+
+//         // Log the color data to the console
+//         console.log('Extracted color data:', data);
+
+//         return (
+//           <div className="relative">
+//             <div className="absolute top-0 right-0 bottom-0 left-0 h-[100%] w-[100%] -z-10" style={{ background: `radial-gradient(circle, ${data} 0%, transparent 80%)`, }}></div>
+//             <img
+//               src={src}
+//               alt="example"
+//               className="z-10"
+//               style={{ width: '100%', height: 'auto' }}
+//             />
+//           </div>
+//         );
+//       }}
+//     </Color>
+// <div style={{ position: 'relative', display: 'inline-block' }}>
+//   <img
+//     src={src}
+//     alt="example"
+//     style={{ width: '100%', height: 'auto' }}
+//   />
+//   <Palette src={src} colorCount={2}>
+
+//     {({ data, loading, error }) => {
+//       if (loading) return <div>Loading...</div>;
+//       if (error) return <div>Error loading colors</div>;
+
+//        const gradient = `linear-gradient(to bottom, ${data[0]}, ${data[1]})`;
+
+//       return (
+//         <div
+//           style={{
+//             position: 'absolute',
+//             top: '-12.5%',
+//             left: '-12.5%',
+//             width: '125%',
+//             height: '125%',
+//             background: gradient,
+//             opacity: 0.7,
+//             pointerEvents: 'none',
+//             zIndex: 1,
+//           }}
+//         ></div>
+//       );
+//     }}
+//   </Palette>
+// </div>
+//   );
+// };
+
+function Tag(name:string) {
+  return (
+    <div className="text-sm uppercase text-gray-400 inline-block" rel="tag">{name}</div>
+  )
 }
 
 function ShopProduct() {
+  const { slug } = useParams()
+
+  const item = getProductBySlug(slug)
   return (
     <div className="mt-40 text-gray-50">
       <Section>
@@ -20,57 +103,25 @@ function ShopProduct() {
 
           <div className="grid gird-cols-1 xl:grid-cols-2 gap-12">
             <div>
+              {/* <ImageWithGradient src={`/images/products/${item.thumbnail}`} /> */}
               <img src={`/images/products/${item.thumbnail}`} />
               <iframe src="https://embed.beatport.com/?id=10826427&type=track" width="100%" height="162"></iframe>
             </div>
             <div>
-              <h1 className="text-4xl font-bold">{item.title}</h1>
-              <div className="tags flex">
+              <h1 className="text-5xl font-bold uppercase mb-2">{item.title}</h1>
+              <div className="tags flex mb-6">
                 <div className="text-sm uppercase text-gray-400 inline-block" rel="tag">#Bass House</div>
                 <div className="text-sm uppercase text-gray-400 inline-block" rel="tag">#Loops</div>
                 <div className="text-sm uppercase text-gray-400 inline-block" rel="tag">#One Shots</div>
                 <div className="text-sm uppercase text-gray-400 inline-block" rel="tag">#Tech House</div>
               </div>
-              € 25.00
-
-
-              <div>
-                Get freaky deaky with this sample library chock-full of hard-hitting Drum Loops, groove-enhancing Bass Loops and quirky Synth Loops.
-
-                Mike McFly has released tracks on tastemaker labels such as Dirtybird, Toolroom Records, Armada Music and Relief Records and has personally crafted and curated this collection of ideas for you to go nuts on.
-
-                Or to quote DTFD/Dirtybird duo Gettoblaster: “absolutely fire pack.”
-
-                Inspired by artists such as Chris Lake, Walker & Royce, Ardalan, Bruno Furlan, Cloonee, John Summit and Martin Ikin and labels such as Big Beat, Dirtybird, Pyscho Disco, Box of Cats and Sola Records, this kit should quickly become one of your go-to sample libraries.
-
-                Included in the pack:
-
-                15 x Drum Loops (divided in separate stems)
-                15 x Top Loops
-                20 x Bass Loops (sidechained and non sidechained)
-                20 x Synth Loops (sidechained and non sidechained)
-                20 x FX (risers, drops, break fx etc.)
-                20 x Kick
-                10 x Clap
-                10 x Snare
-                20 x Hats
-                20 x Perc
-                Pick this one up if you are interested in spicing up your Tech or Bass House tracks, or if you are in need of instant inspiration! Don’t sleep on this, get this gem of a sample pack today!
-
-                GUZ [Axtone, Spinnin’ Deep]: “These are some excellent high quality samples which can be used in several genres. It’s easy to hear that the pack maker is a producer of quality stuff as well.”
-
-                Gettoblaster [Dirtybird, DFTD]: “Absolutely fire sample pack! Excited to get some music together using this!”
-
-                Black V Neck [Dirtybird, OWSLA]: “This is definitely a pack that you need to add to your library! Super unique sounds to make your productions stick out from the rest. With West Coast House Vol. 1 it’s easy to get an idea going that will elevate your sound and get you noticed.”
-
-                Arnold & Lane [Box Of Cats, IN/ROTATION]: “Absolutely loving this sample pack. Quite refreshing to receive a pack that includes sounds that actually translate well into the work flow! We had a lot of fun cutting up some of the fx and loop snippets. Getting creative with the right sample packs is essential in our production process. This is a fine example of a healthy pack to utilize. Highly recommend if you need good sounds to get a project nice and full or looking for some inspiration/ideas.”
-
-                Neverglow [Confession]: “The cool thing about this sample pack is that it contains samples that are quirky and unique. This really helps you stand out with your productions. Aside from that, we really felt the drums hit and are really tight and well processed. This is ready to be loaded into your project and add some extra bounce!”
-
-                Mike McFly [Dirtybird, Toolroom]: “I hate this sample library.”
-
-                BUY NOW (VIA GUMROAD)
+              <span className="block text-2xl mb-6">{formatPrice(item?.price.amount, item?.price.currency)}</span>
+              <div className="mb-6">
+                <p>
+                  It all started with a vision that turned into a house. A house where we celebrate the creative hustle. Thanks for being part of our journey because a decade of us means a decade of you. For our 10th anniversary, we have curated a special collection of tracks that celebrate our love for house music. Join us in commemorating a decade of House Of Hustle with this exclusive compilation.
+                </p>
               </div>
+              <Button label="Buy Now" block />
             </div>
           </div>
 
