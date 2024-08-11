@@ -22,7 +22,7 @@ function Header() {
   }, []);
 
   return (
-    <header className="fixed left-20 right-20 top-8 z-40 rounded-xl backdrop-blur-md bg-gray-900/30 border border-gray-700/30">
+    <header className="fixed left-4 md:left-20 right-4 md:right-20 top-4 md:top-8 z-40 rounded-xl backdrop-blur-md bg-gray-900/30 border border-gray-700/30">
       <Container>
         <MenuDesktop />
         <MenuMobile isOpen={mobileOpen} setMobileOpen={setMobileOpen} />

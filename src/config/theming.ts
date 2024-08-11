@@ -6,8 +6,6 @@ export const theming = plugin(
     addBase({
       ':root': {
 
-        'brand': "",
-
         // "--roboto": var('--font-roboto'),
         // "--montserrat": var('--font-montserrat'),
 
@@ -80,7 +78,7 @@ export const theming = plugin(
         // =============================================================
         // Named Colors
         // =============================================================
-        '--brand': "#c4487a",
+        '--brand': "#b943ad",
 
 
         '--primary': "var(--brand)",

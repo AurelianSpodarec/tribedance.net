@@ -6,25 +6,25 @@ export interface IMenuItem {
 
 const dataMenu: IMenuItem[] = [
   {
-    name: "Academy",
-    url: "/academy",
-  },
-  {
-    name: "Mixing and Mastering",
-    url: "/mixing-and-mastering",
-  },
-  {
-    name: "Co-Production",
-    url: "/co-production"
-  },
-  {
-    name: "Blog",
-    url: "/blog",
-  },
-  {
     name: "Shop",
     url: "/shop",
   },
+  // {
+  //   name: "Mixing and Mastering",
+  //   url: "/mixing-and-mastering",
+  // },
+  // {
+  //   name: "Academy",
+  //   url: "/academy",
+  // },
+  // {
+  //   name: "Co-Production",
+  //   url: "/co-production"
+  // },
+  // {
+  //   name: "Blog",
+  //   url: "/blog",
+  // },
 ]
 
 export default dataMenu;
