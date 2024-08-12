@@ -27,7 +27,7 @@ function Section({ id, className, style, children, color = "default", size = "md
   };
 
   return (
-    <section aria-labelledby={useID} id={id} className={`${className ? className : ""} ${sizes[size]} ${colors[color]} relative z-10`} style={style}>
+    <section aria-labelledby={useID} id={id} className={`${sizes[size]} ${colors[color]} relative z-10 ${className ? className : ""}`} style={style}>
       {children}
     </section>
   )

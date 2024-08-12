@@ -3,7 +3,7 @@ import { Button } from "../atoms/button";
 
 function MikeCTA() {
   return (
-    <Section>
+    <Section size="clean">
       <div className="w-full rounded overflow-hidden bg-quad cursor-pointer border-y border-gray-700">
         <div className="container max-w-7xl mx-auto px-16 py-28">
           <div className="flex flex-col-reverse xl:flex-row">

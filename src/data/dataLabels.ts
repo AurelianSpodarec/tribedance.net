@@ -4,131 +4,162 @@ interface ILabel {
   logo: string
 }
 
-const dataLabels = {
-  "1000": {
-    name: "House Of Hustle",
-    logo: "/images/labels/house-of-hustle.jpg"
+const dataLabels = [
+  {
+    "id": 42127,
+    "name": "House Of Hustle",
+    "count": 22
   },
-  "2000": {
-    name: "Strangelove Recordings",
-    logo: "/images/labels/strangelove-recordings.jpg"
+  {
+    "id": 61960,
+    "name": "Strangelove Recordings",
+    "count": 9
   },
-  "3000": {
-    name: "This Ain't Bristol",
-    logo: "/images/labels/this-aint-bristol.jpg"
+  {
+    "id": 46486,
+    "name": "This Ain't Bristol",
+    "count": 8
   },
-  "4000": {
-    name: "Psycho Disco!",
-    logo: "/images/labels/psycho-disco.jpg"
+  {
+    "id": 49709,
+    "name": "Psycho Disco!",
+    "count": 6
   },
-  "5000": {
-    name: "Box Of Cats",
-    logo: "/images/labels/box-of-cats.jpg"
+  {
+    "id": 65219,
+    "name": "Box Of Cats",
+    "count": 5
   },
-  "6000": {
-    name: "Gold Deeper",
-    logo: "/images/labels/gold-deeper.jpg"
+  {
+    "id": 76828,
+    "name": "Gold Deeper",
+    "count": 5
   },
-  "7000": {
-    name: "Kyubu Records",
-    logo: "/images/labels/kyubu-records.jpg"
+  {
+    "id": 37698,
+    "name": "Kyubu Records",
+    "count": 5
   },
-  "8000": {
-    name: "Audiophile XXL",
-    logo: "/images/labels/audiophile-xxl.jpg"
+  {
+    "id": 49595,
+    "name": "Audiophile XXL",
+    "count": 4
   },
-  "9000": {
-    name: "Toolroom",
-    logo: "/images/labels/toolroom.jpg"
+  {
+    "id": 495,
+    "name": "Toolroom",
+    "count": 4
   },
-  "10000": {
-    name: "noir sur blanc records",
-    logo: "/images/labels/noir-sur-blanc-records.jpg"
+  {
+    "id": 72893,
+    "name": "noir sur blanc records",
+    "count": 4
   },
-  "11000": {
-    name: "Animal Language",
-    logo: "/images/labels/animal-language.jpg"
+  {
+    "id": 12670,
+    "name": "Animal Language",
+    "count": 3
   },
-  "12000": {
-    name: "Be Rich Records",
-    logo: "/images/labels/be-rich-records.jpg"
+  {
+    "id": 17657,
+    "name": "Be Rich Records",
+    "count": 3
   },
-  "13000": {
-    name: "Billions",
-    logo: "/images/labels/billions.jpg"
+  {
+    "id": 53154,
+    "name": "Billions",
+    "count": 3
   },
-  "14000": {
-    name: "House Of Bangerz",
-    logo: "/images/labels/house-of-bangerz.jpg"
+  {
+    "id": 56412,
+    "name": "House Of Bangerz",
+    "count": 3
   },
-  "15000": {
-    name: "LW Recordings",
-    logo: "/images/labels/lw-recordings.jpg"
+  {
+    "id": 7839,
+    "name": "LW Recordings",
+    "count": 3
   },
-  "16000": {
-    name: "Medium Rare Recordings",
-    logo: "/images/labels/medium-rare-recordings.jpg"
+  {
+    "id": 44904,
+    "name": "Medium Rare Recordings",
+    "count": 3
   },
-  "17000": {
-    name: "Armada Chill",
-    logo: "/images/labels/armada-chill.jpg"
+  {
+    "id": 43392,
+    "name": "Armada Chill",
+    "count": 2
   },
-  "18000": {
-    name: "Armada Music Albums",
-    logo: "/images/labels/armada-music-albums.jpg"
+  {
+    "id": 38,
+    "name": "Armada Music Albums",
+    "count": 2
   },
-  "19000": {
-    name: "D4 D4NCE",
-    logo: "/images/labels/d4-d4nce.jpg"
+  {
+    "id": 90764,
+    "name": "D4 D4NCE",
+    "count": 2
   },
-  "20000": {
-    name: "Perfect Driver Music",
-    logo: "/images/labels/perfect-driver-music.jpg"
+  {
+    "id": 23698,
+    "name": "Perfect Driver Music",
+    "count": 2
   },
-  "21000": {
-    name: "Relief",
-    logo: "/images/labels/relief.jpg"
+  {
+    "id": 900,
+    "name": "Relief",
+    "count": 2
   },
-  "22000": {
-    name: "Sink or Swim",
-    logo: "/images/labels/sink-or-swim.jpg"
+  {
+    "id": 78355,
+    "name": "Sink or Swim",
+    "count": 2
   },
-  "23000": {
-    name: "Build It Records",
-    logo: "/images/labels/build-it-records.jpg"
+  {
+    "id": 47037,
+    "name": "Build It Records",
+    "count": 1
   },
-  "24000": {
-    name: "DIRTYBIRD",
-    logo: "/images/labels/dirtybird.jpg"
+  {
+    "id": 619,
+    "name": "DIRTYBIRD",
+    "count": 1
   },
-  "25000": {
-    name: "East Project",
-    logo: "/images/labels/east-project.jpg"
+  {
+    "id": 45870,
+    "name": "East Project",
+    "count": 1
   },
-  "26000": {
-    name: "Gold Digger Records",
-    logo: "/images/labels/gold-digger-records.jpg"
+  {
+    "id": 63424,
+    "name": "Gold Digger Records",
+    "count": 1
   },
-  "27000": {
-    name: "Lame Digital",
-    logo: "/images/labels/lame-digital.jpg"
+  {
+    "id": 68839,
+    "name": "Lame Digital",
+    "count": 1
   },
-  "28000": {
-    name: "Moody Recordings",
-    logo: "/images/labels/moody-recordings.jpg"
+  {
+    "id": 316,
+    "name": "Moody Recordings",
+    "count": 1
   },
-  "29000": {
-    name: "Nothing But",
-    logo: "/images/labels/nothing-but.jpg"
+  {
+    "id": 43219,
+    "name": "Nothing But",
+    "count": 1
   },
-  "30000": {
-    name: "SoundCloud Direct",
-    logo: "/images/labels/soundcloud-direct.jpg"
+  {
+    "id": 54352,
+    "name": "SoundCloud Direct",
+    "count": 1
   },
-  "31000": {
-    name: "Visceral",
-    logo: "/images/labels/visceral.jpg"
+  {
+    "id": 30985,
+    "name": "Visceral",
+    "count": 1
   }
-};
+]
 
 export default dataLabels
