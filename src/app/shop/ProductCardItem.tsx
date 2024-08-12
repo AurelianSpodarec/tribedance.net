@@ -3,7 +3,7 @@ import Link from "next/link"
 import { formatPrice } from "@/lib/utils"
 import { ITrack } from "@/data/dataTracks"
 
-function ProductCardItem({ item }: { item: ITrack }) {
+function  ProductCardItem({ item }: { item: ITrack }) {
   return (
     <Link href={`/shop/${item.slug}`}>
       <div className="text-gray-50">

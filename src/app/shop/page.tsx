@@ -40,7 +40,7 @@ function PageShop() {
           <Container>
             <div className="grid gap-8 grid-cols-4">
               {dataTracks.map((item) => {
-                return <ProductCardItem item={item} />
+                return <ProductCardItem key={item.id} item={item} />
               })}
             </div>
           </Container>

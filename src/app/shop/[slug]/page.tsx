@@ -1,15 +1,17 @@
 'use client'
 
 import React from 'react';
-import { Color, Palette } from 'color-thief-react';
+import Link from 'next/link';
 import { useParams } from "next/navigation";
+import { Color, Palette } from 'color-thief-react';
 
 import { getTrackBySlug } from "@/data/dataTracks";
-import { formatPrice } from "@/lib/utils";
 
 import Section from "@/components/_layout/Section"
 import Container from "@/components/_layout/Container"
-import { Button } from "@/components/atoms/button"; 
+
+import { Button } from "@/components/atoms/button";
+import AudioBar from '@/components/organism/AudioBar';
 
 function ImageColors({ src }) {
   console.log(src)
@@ -50,7 +52,7 @@ function ImageColors({ src }) {
                   background: `linear-gradient(to top right, ${color1}, ${color2})`,
                   clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
                 }}>
-              </div>  
+              </div>
             </div>
           </>
         );
@@ -83,10 +85,10 @@ function ShopProduct() {
 
   console.log(item)
   // const item = {}
-  if(!item) return <></>
+  if (!item) return <></>
   return (
     <>
-      <ImageColors src={`/images/products/10-years-house-of-hustle.jpg`} />
+      <ImageColors src={item?.release.image.uri} />
       <Section className="mt-20 text-gray-200">
         <Container size="6xl">
           <div className="grid gird-cols-1 xl:grid-cols-2 gap-12 items-center">
@@ -113,12 +115,23 @@ function ShopProduct() {
                   <img className="rounded h-5 w-5 object-cover " src={item?.artists[0].image.uri} />
                 </div>
               </div>
-              <div className="text-3xl py-4 font-semibold">{item?.price.display}</div>
-              <Button label="Buy Now" block />
+              <div className="text-3xl py-6 font-semibold">{item?.price.display}</div>
+
+              <Link href={`https://www.beatport.com/track/${item.slug}/${item.id}`} target="_blank">
+                <Button label="Buy Now" size="lg" />
+              </Link>
             </div>
           </div>
+          {/* <img src={item.url} /> */}
+
+          {/* When playing, change the gradient, and when stop, stop it */}
+          {/* go round around the image when playing, and do like a sun around */}
+          {/* Have  "PLAY" and "STOP" icon on the player itself */}
           <div className="fixed bottom-0 left-0 right-0">
-            <iframe src={`https://embed.beatport.com/?id=${item?.id}&type=track`} width="100%" height="110px"></iframe>
+            {/* <iframe src={`https://embed.beatport.com/?id=${item?.release.id}&type=track`} width="100%" height="110px"></iframe> */}
+            {/* https://geo-samples.beatport.com/track/ebaeb37d-e61b-4b8b-b674-52c72736fdda.LOFI.mp3 */}
+            <AudioBar item={item} image={item?.release.image.uri} name={item?.release.name} audio={item.sample_url} />
+            {/* <iframe src="https://embed.beatport.com/?id=15987578&type=track" width="100%" height="162" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>  */}
           </div>
         </Container>
       </Section >
@@ -134,3 +147,4 @@ function ShopProduct() {
 }
 
 export default ShopProduct
+
