@@ -38,7 +38,7 @@ function PageShop() {
       <Section>
         <div className="flex">
           <Container>
-            <div className="grid gap-8 grid-cols-4">
+            <div className="grid gap-8 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
               {dataTracks.map((item) => {
                 return <ProductCardItem key={item.id} item={item} />
               })}

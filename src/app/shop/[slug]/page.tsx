@@ -11,7 +11,8 @@ import Section from "@/components/_layout/Section"
 import Container from "@/components/_layout/Container"
 
 import { Button } from "@/components/atoms/button";
-import AudioBar from '@/components/organism/AudioBar';
+import AudioBar from '@/components/organism/AudioBar/_variations/AudioBar';
+// import AudioBar from '@/components/organism/AudioBar';
 
 function ImageColors({ src }) {
   console.log(src)
@@ -130,7 +131,8 @@ function ShopProduct() {
           <div className="fixed bottom-0 left-0 right-0">
             {/* <iframe src={`https://embed.beatport.com/?id=${item?.release.id}&type=track`} width="100%" height="110px"></iframe> */}
             {/* https://geo-samples.beatport.com/track/ebaeb37d-e61b-4b8b-b674-52c72736fdda.LOFI.mp3 */}
-            <AudioBar item={item} image={item?.release.image.uri} name={item?.release.name} audio={item.sample_url} />
+            {/* <AudioBar item={item} image={item?.release.image.uri} name={item?.release.name} audio={item.sample_url} /> */}
+            <AudioBar audio={item.sample_url}  />
             {/* <iframe src="https://embed.beatport.com/?id=15987578&type=track" width="100%" height="162" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>  */}
           </div>
         </Container>
