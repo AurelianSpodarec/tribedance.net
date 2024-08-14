@@ -123,7 +123,8 @@ function ShopProduct() {
               </Link>
             </div>
           </div>
-          {/* <img src={item.url} /> */}
+          {/* <img src={item.image.uri} /> */}
+          {/* <img src={item.image} /> */}
 
           {/* When playing, change the gradient, and when stop, stop it */}
           {/* go round around the image when playing, and do like a sun around */}
@@ -132,7 +133,7 @@ function ShopProduct() {
             {/* <iframe src={`https://embed.beatport.com/?id=${item?.release.id}&type=track`} width="100%" height="110px"></iframe> */}
             {/* https://geo-samples.beatport.com/track/ebaeb37d-e61b-4b8b-b674-52c72736fdda.LOFI.mp3 */}
             {/* <AudioBar item={item} image={item?.release.image.uri} name={item?.release.name} audio={item.sample_url} /> */}
-            <AudioBar audio={item.sample_url}  />
+            <AudioBar audio={item.sample_url} image={item.image?.uri} thumbnail={item.release.image.uri} name={item.release.name} />
             {/* <iframe src="https://embed.beatport.com/?id=15987578&type=track" width="100%" height="162" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>  */}
           </div>
         </Container>

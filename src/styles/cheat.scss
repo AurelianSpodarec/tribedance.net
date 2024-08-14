@@ -2,12 +2,60 @@
 // # Cheat - Hot fixes and quick code; needs cleaning up afterwards
 // ==========================================================================
 
-
 .test-card {
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
   &:hover {
-    transform: translate3d(0px, 0px, 0px) scale3d(1.1, 1.1, 1.1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform: translate3d(0px, 0px, 0px) scale3d(1.1, 1.1, 1.1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+      skew(0deg, 0deg);
     transform-style: preserve-3d;
   }
 }
+
+.custom-range {
+  touch-action: none;
+  -webkit-appearance: none;
+  appearance: none;
+  user-select: none;
+  width: 320px;
+  height: 2px;
+  border-radius: 1px;
+  background: #cdd9ed;
+  position: relative;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #f5f9ff;
+    border: 2px solid #6441a5;
+    cursor: pointer;
+    border-radius: 18px;
+    transition: 0.5s ease;
+    &:focus,
+    &:active {
+      padding: 8px;
+      height: 15px;
+      width: 15px;
+    }
+  }
+}
+
+// .custom-range::-webkit-slider-thumb {
+//   -webkit-appearance: none;
+//   appearance: none;
+//   width: 5px; /* Set the width of the handler */
+//   height: 5px; /* Set the height of the handler */
+//   background-color: #007bff; /* Set your desired color */
+//   border-radius: 50%; /* Make it round */
+//   cursor: pointer;
+// }
+
+// .custom-range::-moz-range-thumb {
+//   width: 5px; /* Set the width of the handler */
+//   height: 5px; /* Set the height of the handler */
+//   background-color: #007bff; /* Set your desired color */
+//   border-radius: 50%; /* Make it round */
+//   cursor: pointer;
+// }
