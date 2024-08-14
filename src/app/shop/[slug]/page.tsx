@@ -12,10 +12,61 @@ import Container from "@/components/_layout/Container"
 
 import { Button } from "@/components/atoms/button";
 import AudioBar from '@/components/organism/AudioBar/_variations/AudioBar';
+
 // import AudioBar from '@/components/organism/AudioBar';
 
+// function ImageColors({ src }) {
+//   console.log(src)
+//   return (
+//     <Palette src={src} colorCount={2} format="hex">
+//       {({ data, loading, error }) => {
+//         if (loading) {
+//           console.log('Loading color data...');
+//           return <div></div>;
+//         }
+
+//         if (error) {
+//           console.error('Error loading color data:', error);
+//           return <div></div>;
+//         }
+
+//         // Log the color data to the console
+//         console.log('Extracted color data:', data);
+//         const color1 = data[0]
+//         const color2 = data[1]
+//         return (
+//           <>
+//             <div aria-hidden="true" className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+//               <div
+//                 className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] opacity-30 sm:left-[calc(20%-30rem)] sm:w-[92.1875rem]"
+//                 style={{
+//                   background: `linear-gradient(to top right, ${color1}, ${color2})`,
+//                   clipPath:
+//                     "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+//                 }}
+//               >
+//               </div>
+//             </div>
+//             <div aria-hidden="true" className="absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl ">
+//               <div
+//                 className="relative aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr opacity-30 sm:w-[102.1875rem]"
+//                 style={{
+//                   background: `linear-gradient(to top right, ${color1}, ${color2})`,
+//                   clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+//                 }}>
+//               </div>
+//             </div>
+//           </>
+//         );
+//       }}
+//     </Palette>
+//   );
+// }
+
+
+
 function ImageColors({ src }) {
-  console.log(src)
+  console.log(src);
   return (
     <Palette src={src} colorCount={2} format="hex">
       {({ data, loading, error }) => {
@@ -29,31 +80,27 @@ function ImageColors({ src }) {
           return <div></div>;
         }
 
-        // Log the color data to the console
         console.log('Extracted color data:', data);
-        const color1 = data[0]
-        const color2 = data[1]
+        const color1 = data[0];
+        const color2 = data[1];
+
         return (
           <>
             <div aria-hidden="true" className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
               <div
-                className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] opacity-30 sm:left-[calc(20%-30rem)] sm:w-[92.1875rem]"
+                className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] opacity-30 sm:left-[calc(20%-30rem)] sm:w-[92.1875rem] animate-random-wave-rotate"
                 style={{
                   background: `linear-gradient(to top right, ${color1}, ${color2})`,
-                  clipPath:
-                    "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
                 }}
-              >
-              </div>
+              ></div>
             </div>
-            <div aria-hidden="true" className="absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl ">
+            <div aria-hidden="true" className="absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl">
               <div
-                className="relative aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr opacity-30 sm:w-[102.1875rem]"
+                className="relative aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr opacity-30 sm:w-[102.1875rem] animate-random-wave-rotate"
                 style={{
                   background: `linear-gradient(to top right, ${color1}, ${color2})`,
-                  clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-                }}>
-              </div>
+                }}
+              ></div>
             </div>
           </>
         );
@@ -61,23 +108,6 @@ function ImageColors({ src }) {
     </Palette>
   );
 }
-
-function Tag(name: string) {
-  return (
-    <div className="text-sm uppercase text-gray-400 inline-block" rel="tag">{name}</div>
-  )
-}
-// function ProductRecommendations() {
-//   const items = getProductRandom(3);
-
-//   return (
-//     <div className="grid grid-cols-4 gap-6">
-//       {items.map((item) => (
-//         <ProductCardItem key={item.slug} item={item} />
-//       ))}
-//     </div>
-//   );
-// }
 
 function ShopProduct() {
   const { slug } = useParams()

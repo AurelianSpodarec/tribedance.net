@@ -59,3 +59,167 @@
 //   border-radius: 50%; /* Make it round */
 //   cursor: pointer;
 // }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate-and-morph {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(90deg);
+    clip-path: polygon(60% 0%, 100% 60%, 60% 100%, 0% 60%);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+    clip-path: polygon(50% 20%, 80% 50%, 50% 80%, 20% 50%);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(270deg);
+    clip-path: polygon(70% 0%, 100% 70%, 70% 100%, 0% 70%);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+}
+
+.animate-rotate-and-morph {
+  animation: rotate-and-morph 10s infinite linear;
+}
+
+.icon-playing {
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  height: 100%;
+  width: 100%;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 33%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    transition:
+      width 200ms ease-in-out,
+      clip-path 200ms ease-in-out;
+    will-change: width, clip-path;
+  }
+
+  &::before {
+    left: 0;
+    width: 40%;
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
+  }
+
+  &::after {
+    // add a pixel to fix a webkit gap bug
+    right: 1px;
+    width: 60%;
+    // calc to account for the gap bug fix
+    clip-path: polygon(0 calc(20% - 0.5px), 100% 50%, 100% 50%, 0 calc(80% + 0.5px));
+  }
+
+  &:checked {
+    &::before,
+    &::after {
+      width: 33%;
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+}
+
+// =========
+// unrelated
+// =========
+@keyframes something {
+  0%,
+  50% {
+    background: #1a1a1a;
+  }
+  25% {
+    background: #222;
+  }
+  75% {
+    background: #111;
+  }
+}
+ 
+
+.audio-progress-bar {
+  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+  appearance: none; /* Remove default styling for other browsers */
+  height: 5px; /* Adjust height as needed */
+  border-radius: 4px; /* Optional: round the corners */
+  background: transparent; /* Ensure background is transparent to show gradient */
+}
+
+// .audio-progress-bar::-webkit-slider-runnable-track {
+//   height: 8px;
+//   border-radius: 4px;
+//   background: transparent; /* Make sure the track background is transparent */
+// }
+
+.audio-progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default thumb styling */
+  appearance: none;
+  width: 16px; /* Thumb width */
+  height: 16px; /* Thumb height */
+  border-radius: 50%; /* Round the thumb */
+  // background: ; /* Thumb color */
+  cursor: pointer;
+  @apply bg-pink-700
+}
+
+// .audio-progress-bar::-moz-range-track {
+//   height: 8px;
+//   border-radius: 4px;
+//   background: transparent; /* Make sure the track background is transparent */
+// }
+
+// .audio-progress-bar::-moz-range-thumb {
+//   width: 16px; /* Thumb width */
+//   height: 16px; /* Thumb height */
+//   border-radius: 50%; /* Round the thumb */
+//   background: #000; /* Thumb color */
+//   cursor: pointer;
+// }
+
+// .audio-progress-bar::-ms-track {
+//   height: 8px;
+//   border-radius: 4px;
+//   background: transparent; /* Make sure the track background is transparent */
+//   border-color: transparent;
+//   color: transparent;
+// }
+
+// .audio-progress-bar::-ms-thumb {
+//   width: 16px; /* Thumb width */
+//   height: 16px; /* Thumb height */
+//   border-radius: 50%; /* Round the thumb */
+//   background: #000; /* Thumb color */
+//   cursor: pointer;
+// }
+
+// .audio-progress-bar::-ms-fill-lower {
+//   background: transparent; /* Make sure the track background is transparent */
+// }
+
+// .audio-progress-bar::-ms-fill-upper {
+//   background: transparent; /* Make sure the track background is transparent */
+// }

@@ -1,6 +1,3 @@
-import React from "react";
-import useAudio from "../useAudio"
-
 function IconAudioVolume({ volume }) {
   const isMuted = volume === 0
   const isMoreThanHalf = volume >= 0.50
@@ -18,14 +15,10 @@ function IconAudioVolume({ volume }) {
   );
 }
 
-
 function AudioVolume({ volume, setVolume }) {
   return (
     <div className="flex items-center align-center">
       <IconAudioVolume volume={volume} />
-      {/* <svg className="fill-red-500">
-      <path class="ytp-svg-fill" d="m 21.48,17.98 c 0,-1.77 -1.02,-3.29 -2.5,-4.03 v 2.21 l 2.45,2.45 c .03,-0.2 .05,-0.41 .05,-0.63 z m 2.5,0 c 0,.94 -0.2,1.82 -0.54,2.64 l 1.51,1.51 c .66,-1.24 1.03,-2.65 1.03,-4.15 0,-4.28 -2.99,-7.86 -7,-8.76 v 2.05 c 2.89,.86 5,3.54 5,6.71 z M 9.25,8.98 l -1.27,1.26 4.72,4.73 H 7.98 v 6 H 11.98 l 5,5 v -6.73 l 4.25,4.25 c -0.67,.52 -1.42,.93 -2.25,1.18 v 2.06 c 1.38,-0.31 2.63,-0.95 3.69,-1.81 l 2.04,2.05 1.27,-1.27 -9,-9 -7.72,-7.72 z m 7.72,.99 -2.09,2.08 2.09,2.09 V 9.98 z" id="ytp-id-76"></path>
-      </svg> */}
       <input
         className="h-1 max-w-[70px] custom-range"
         type="range"
@@ -39,59 +32,4 @@ function AudioVolume({ volume, setVolume }) {
   )
 }
 
-
-function ToggleOnOff() {
-
-}
-
-function AudioBar({ audio, image, thumbnail, name }) {
-  const {
-    audioRef,
-    isPlaying,
-    progress,
-    volume,
-    startAudio,
-    pauseAudio,
-    resetAudio,
-    setVolume,
-    handleProgressChange
-  } = useAudio();
-
-  return (
-    <div className="flex p-2 bg-black items-center align-center justify-center">
-      <audio ref={audioRef} src={audio} />
-
-      <div className="flex items-center align-center min-w-[250px] space-x-2">
-        <img src={thumbnail} className="w-12 h-12" />
-        <span>{name}</span>
-      </div>
-
-      <button onClick={isPlaying ? pauseAudio : startAudio}>
-        {isPlaying ? "Pause" : "Play"}
-      </button>
-
-      <div className="w-full">
-        {/* Progress: {(progress * 100).toFixed(2)}% */}
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.0000001"
-          value={progress}
-          onChange={(e) => handleProgressChange(parseFloat(e.target.value))}
-          style={{
-            width: "100%",
-            cursor: "pointer",
-            transition: "transform 0.05s ease-out",
-            willChange: "transform",
-          }}
-        />
-      </div>
-
-      <AudioVolume volume={volume} setVolume={setVolume} />
-
-    </div>
-  );
-}
-
-export default AudioBar;
+export default AudioVolume
